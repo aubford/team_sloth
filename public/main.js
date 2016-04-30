@@ -6,7 +6,19 @@ angular.module("main")
 	$scope.getExcuse = function(){
 		$http.get("/getExcuse")
 		.then(function(returnData){
-			$scope.excuse = returnData.data;
+			// console.log(returnData);
 		})
 	}
+
+	$scope.shakestatus = "stay"
+
+	$scope.shake = function(){
+		console.log("asdfgasdf")
+		if($scope.shakestatus === "shake"){
+			$scope.shakestatus = "stay"
+		}else{
+			$scope.shakestatus = "shake"
+		}
+	}
+
 }])
